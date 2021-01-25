@@ -5,7 +5,7 @@ A plataform for management of class in school.
 # Description
 
 A plataform for management of class in school.  Written in JavaScript using
-NodeJS, express.js, Axxio.
+NodeJS, express.js.
 
 
 ## DataBase in Mongo Atlass
