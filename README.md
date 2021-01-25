@@ -1,8 +1,14 @@
 # Proyecto tecnoeduca
 
-Create plataform for management of class in school. 
+A plataform for management of class in school. 
 
-## DataBase
+# Description
+
+A plataform for management of class in school.  Written in JavaScript using
+NodeJS, express.js, Axxio.
+
+
+## DataBase in Mongo Atlass
 
 ### Teachers
 
