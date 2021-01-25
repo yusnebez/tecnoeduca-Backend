@@ -2,13 +2,13 @@
 
 Create plataform for management of class in school. 
 
-DataBase
+## DataBase
 
-## Teachers
+### Teachers
 
 The information of Teachers.
 
-| Teacher Bd|
+| Name | Type |
 | --- | --- | 
 | teacherid | Objectid | 
 | username | String | 
@@ -19,13 +19,13 @@ The information of Teachers.
 | course | array object | 
 
  
-## Students
+### Students
 
 The information of Students.
 
-| Students Bd|
+| Name | Type |
 | --- | --- | 
-| studentid | Objectid | 
+| studentid | Objectid|
 | username | String | 
 | password  | String | 
 | email | string | 
@@ -36,11 +36,11 @@ The information of Students.
 | media | number | 
 | course | array object | 
 
-## Course
+### Course
 
 The information of Course.
 
-| Course Bd|
+| Name | Type |
 | --- | --- | 
 | courseid | Objectid | 
 | teacherid | Objectid | 
