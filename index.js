@@ -6,7 +6,7 @@ const morgan = require('morgan')
 const path = require('path')
 
 
-mongoose.connect('mongodb://localhost:27017/tecnoeduca') /* process.env.MONGO_URL, */ 
+mongoose.connect(process.env.MONGO_DB)  
 
 //  {  
 //     // dbName: process.env.MONGO_DB || 'tecnoeduca',
