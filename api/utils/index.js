@@ -10,8 +10,8 @@ function authUser (req, res, next) {
         if (err) { res.status(403).json({ error: 'Token not valid' }) }
   
         teacherModel.findOne({ email: token.email })
-          .then(user => {
-            res.locals.user = user
+          .then(teacher => {
+            res.locals.teacher = teacher
             next()
           })
           .catch(err => res.json(err))
