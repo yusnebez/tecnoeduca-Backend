@@ -14,6 +14,9 @@ function authUser (req, res, next) {
             res.locals.user = user
             next()
           })
+          .catch(function (error) {
+            console.error("Error al crear el alumno")
+        })
       })
     }
   }
