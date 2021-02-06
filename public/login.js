@@ -22,6 +22,6 @@ document.getElementById('login').addEventListener("click", function(){
 }) 
 
 function home(){
-    window.location = "http://127.0.0.1:5500/public/subject.html"
+    window.location.href = "subject.html"
 
 }
