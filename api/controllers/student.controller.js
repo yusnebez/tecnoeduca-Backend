@@ -12,7 +12,7 @@ function createStudent(req, res){
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
-//   {email: { $regex: req.body.email } }
+
 
 function getbyEmail(req,res){
     studentModel
