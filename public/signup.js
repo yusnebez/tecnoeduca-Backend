@@ -1,5 +1,10 @@
+const api = axios.create({
+    baseURL:"https://tecnoeducate.herokuapp.com/api",
+    timeout: 2000
+})
+
 document.getElementById('signup').addEventListener("click", function(){
-    axios.post('http://localhost:3000/api/auth/signup',{
+    axios.post('/auth/signup',{
     name: document.getElementById('signup_name').value,
     email: document.getElementById('signup_email').value,
     password: document.getElementById('signup_password').value
@@ -23,6 +28,6 @@ document.getElementById('signup').addEventListener("click", function(){
 
 
 function home(){
-    window.location = "http://127.0.0.1:5500/public/subject.html"
+    window.location.href = "subject.html"
 
 }
