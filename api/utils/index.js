@@ -14,12 +14,11 @@ function authUser (req, res, next) {
             res.locals.user = user
             next()
           })
-          .catch(function (error) {
-            console.error("Error al crear el alumno")
+          .catch(err => res.json(err))
         })
-      })
+      }
     }
-  }
+  
 
   function handleError (err, res) {
     return res.status(400).json(err)

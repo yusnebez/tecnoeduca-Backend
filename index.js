@@ -29,7 +29,7 @@ app
     .use('/api', require('./api/router/router'))
 
 
-app.listen(5000, (err) => {
+app.listen(3000, (err) => {
     if (err) { throw new Error(err) }
     console.info('>'.repeat(40))
     console.info('💻  Tecnoeduca Server Live')
