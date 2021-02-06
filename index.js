@@ -6,21 +6,18 @@ const morgan = require('morgan')
 const path = require('path')
 
 
-mongoose.connect(process.env.MONGO_DB)  
-
-//  {  
-//     // dbName: process.env.MONGO_DB || 'tecnoeduca',
-//     useNewUrlParser: true,
-//     seUnifiedTopology: true,
-// },
-//     function(error){    
-//         if (error) {
-//             console.error(error)}
-//         else{
-//             console.log('conected')
-
-//         }
-//     }
+mongoose.connect({  
+    dbName: process.env.MONGO_DB || 'tecnoeduca',
+    useNewUrlParser: true,
+    seUnifiedTopology: true,
+},
+    function(error){    
+        if (error) {
+            console.error(error)}
+        else{
+            console.log('conected')
+        }
+    })
 
 
 const app = express()
