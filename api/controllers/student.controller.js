@@ -12,6 +12,18 @@ function createStudent(req, res){
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
+//   {email: { $regex: req.body.email } }
+
+function getbyEmail(req,res){
+    studentModel
+    .findOne(req.query)
+    .then(response => res.json(response))
+    .catch((err) => handleError(err, res))
+        // const data = {id: student.id}
+    // res.status(200).json({data})
+    
+
+}
 
 function getAllStudents(req, res){
     studentModel
@@ -22,9 +34,23 @@ function getAllStudents(req, res){
 
 function getStudentById(req, res){
     studentModel
-    .findById(req.params.id)
-    console.log("****",req.params.id)
+    console.log()
+    .findById(req.body.email)
     .then(response => res.json(response))
+    .catch((err) => handleError(err, res))
+
+}
+
+function addSubject(req, res){
+    studentModel
+    .findById(req.params.id)
+    .then(response => {
+        response.subjects.push({
+            info: req.params.subjectId
+        })
+        response.save()
+
+    })
     .catch((err) => handleError(err, res))
 
 }
@@ -48,9 +74,10 @@ function deleteStudentById(req, res){
 module.exports = {
 
     createStudent,
+    getbyEmail,
     getAllStudents,
     getStudentById,
     updateStudent,
     deleteStudentById,
-
+    addSubject,
 }

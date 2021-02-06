@@ -34,14 +34,14 @@ function login(req, res){
         email: req.body.email,
     })
     .then(teacher => {
-        console.log(teacher)
+        
         if (teacher){
         if (bcrypt.compareSync(req.body.password, teacher.password)){
             const data = { email: teacher.email, name: teacher.name}
             const token = jwt.sign (data, process.env.SECRET)
           
             
-            console.log('hola',token, data)
+            
             res.status(200).json({ token: token, ...data})
             }
         else {

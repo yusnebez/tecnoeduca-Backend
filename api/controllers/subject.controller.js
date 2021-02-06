@@ -11,9 +11,7 @@ function createSubject(req, res){
     .catch((err) => handleError(err, res))
 }
 
-function getAllSubjects(req, res){
-    subjectModel
-    .find()
+function getAllSubjects(req, res){n
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 }
@@ -28,7 +26,7 @@ function getSubjectById(req, res){
 
 function updateSubject(req, res){
     subjectModel
-    .findByIdAndUpdate(req.params.id)
+    .findByIdAndUpdate(req.params.id, req.body)
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 
