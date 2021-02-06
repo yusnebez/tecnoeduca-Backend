@@ -9,7 +9,7 @@ const path = require('path')
 mongoose.connect(process.env.MONGO_URL, {  
     dbName: process.env.MONGO_DB || 'tecnoeduca',
     useNewUrlParser: true,
-   
+    useUnifiedTopology: true 
 },
     function(error){    
         if (error) {

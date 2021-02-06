@@ -19,10 +19,9 @@ function getbyEmail(req,res){
     .findOne(req.query)
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
-        // const data = {id: student.id}
-    // res.status(200).json({data})
+   
     
-
+    
 }
 
 function getAllStudents(req, res){
