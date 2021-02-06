@@ -6,10 +6,10 @@ const morgan = require('morgan')
 const path = require('path')
 
 
-mongoose.connect({  
+mongoose.connect(process.env.MONGO_URL, {  
     dbName: process.env.MONGO_DB || 'tecnoeduca',
     useNewUrlParser: true,
-    seUnifiedTopology: true,
+   
 },
     function(error){    
         if (error) {
