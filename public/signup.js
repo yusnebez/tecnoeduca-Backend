@@ -16,10 +16,8 @@ document.getElementById('signup').addEventListener("click", function(){
         localStorage.setItem('email', response.data.email)
         localStorage.setItem('name', response.data.name)
         home()
-    }else{
-
-        
-    }    })
+    } 
+    })
     
     .catch(function (error){
         

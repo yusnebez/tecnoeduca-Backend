@@ -67,6 +67,10 @@ window.onload = function() {
                      .then(function (response){
                        window.location.reload()
                     })
+                    .catch(function (error) {
+                        console.error("Error al crear el alumno")
+                
+                    })
                 })
                 
                  
@@ -84,13 +88,16 @@ window.onload = function() {
                      .then(function (response){
                        window.location.reload()
                     })
+                    .catch(function (error) {
+                        console.error("Error al crear el alumno")
+                
+                    })
                 })
 
+            })
+    })
+    .catch(function (error) {
+        console.error("Error al crear el alumno")
 
-
-})
-
- 
-
- })
+    })
 }

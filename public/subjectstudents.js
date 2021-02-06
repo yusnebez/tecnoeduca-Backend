@@ -24,6 +24,10 @@ window.onload = function() {
         })
         
     })
+    .catch(function (error) {
+        console.error("Error al crear el alumno")
+
+    })
 
 }
 
@@ -65,6 +69,10 @@ document.getElementById('buscar').addEventListener("click", function()
 
         })
         
+    })
+    .catch(function (error) {
+        console.error("Error al crear el alumno")
+
     })
 
 })
