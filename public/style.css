@@ -7,7 +7,7 @@
 .masthead {
   height: 100vh;
   min-height: 500px;
-  background-image: url('../public/img/teacher.jpg');
+  background-image: url('../img/teacher.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -28,7 +28,7 @@
   margin-top: 100px;
   margin-left: 5px;
   margin-right: 5px;
-  background-image: url('../public/img/3992268.jpg');
+  background-image: url('../img/3992268.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
