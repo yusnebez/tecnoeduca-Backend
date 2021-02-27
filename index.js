@@ -7,17 +7,14 @@ const path = require('path')
 
 
 mongoose.connect(process.env.MONGO_URL, {  
-    dbName: process.env.MONGO_DB || 'tecnoeduca',
+    dbName: process.env.MONGO_DB || 'test',
     useNewUrlParser: true,
-    useUnifiedTopology: true 
-},
-    function(error){    
-        if (error) {
-            console.error(error)}
-        else{
-            console.log('conected')
-        }
-    })
+    useCreateIndex: true,
+    useUnifiedTopology: true
+  }, err => {
+    if (err) { throw new Error(err) }
+    console.info('💾 Connected to Mongo Database \n')
+  })
 
 
 const app = express()
@@ -29,7 +26,7 @@ app
     .use('/api', require('./api/router/router'))
 
 
-app.listen(3000, (err) => {
+app.listen(process.env.PORT || 3000, (err) => {
     if (err) { throw new Error(err) }
     console.info('>'.repeat(40))
     console.info('💻  Tecnoeduca Server Live')
