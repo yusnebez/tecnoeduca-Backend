@@ -26,6 +26,6 @@ document.getElementById('signup').addEventListener("click", function(){
 
 
 function home(){
-    window.location.href = "subject.html"
+    window.location.href = "../subject.html"
 
 }
