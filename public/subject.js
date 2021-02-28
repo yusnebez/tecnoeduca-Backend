@@ -36,7 +36,12 @@ function reload (){
 
 window.onload = function() {
     
-    axios.get('https://tecnoeducate.herokuapp.com/api/subject',{
+    axios.create({
+        baseURL:"https://tecnoeducate.herokuapp.com/",
+        timeout: 2000
+    }) 
+    
+    axios.get('api/subject',{
         
         headers: {
             token: localStorage.getItem('token')
