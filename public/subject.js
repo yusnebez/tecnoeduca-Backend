@@ -1,11 +1,11 @@
 const api = axios.create({
-    baseURL:"https://tecnoeducate.herokuapp.com/",
-    timeout: 2000
+    baseURL:"https://tecnoeducate.herokuapp.com/api",
+    timeout: 3000
 })
 
 
 document.getElementById('subject').addEventListener("click", function(){
-    axios.post('api/subject', { 
+    axios.post('/subject', { 
         name: document.getElementById('subject_name').value,
         
     }, 
@@ -36,12 +36,9 @@ function reload (){
 
 window.onload = function() {
     
-    axios.create({
-        baseURL:"https://tecnoeducate.herokuapp.com/",
-        timeout: 2000
-    }) 
-    
-    axios.get('api/subject',{
+  
+
+    axios.get('/subject',{
         
         headers: {
             token: localStorage.getItem('token')
@@ -65,7 +62,7 @@ window.onload = function() {
                 parentname.appendChild(element)  
                 document.getElementById(`eliminar${i}`).addEventListener("click", function(){
 
-                    axios.delete(`api/subject/${subject._id}`, {
+                    axios.delete(`/subject${subject._id}`, {
                      headers: {
                         token: localStorage.getItem('token')
                     }            
@@ -82,7 +79,7 @@ window.onload = function() {
                  
                 document.getElementById(`cambiar${i}`).addEventListener("click", function(){
 
-                    axios.put(`api/subject/${subject._id}`, {
+                    axios.put(`/subject${subject._id}`, {
                     name: document.getElementById(`edit_subject_name${i}`).value
                     },
                     
