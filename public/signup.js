@@ -1,10 +1,10 @@
 const api = axios.create({
-    baseURL:"https://tecnoeducate.herokuapp.com/",
+    baseURL:"https://tecnoeducate.herokuapp.com/api",
     timeout: 2000
 })
 
 document.getElementById('signup').addEventListener("click", function(){
-    axios.post('api/auth/signup',{
+    api.post('/auth/signup',{
     name: document.getElementById('signup_name').value,
     email: document.getElementById('signup_email').value,
     password: document.getElementById('signup_password').value

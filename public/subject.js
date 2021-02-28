@@ -5,7 +5,7 @@ const api = axios.create({
 
 
 document.getElementById('subject').addEventListener("click", function(){
-    axios.post('/subject', { 
+    api.post('/subject', { 
         name: document.getElementById('subject_name').value,
         
     }, 
@@ -38,7 +38,7 @@ window.onload = function() {
     
   
 
-    axios.get('/subject',{
+    api.get('/subject',{
         
         headers: {
             token: localStorage.getItem('token')
@@ -62,7 +62,7 @@ window.onload = function() {
                 parentname.appendChild(element)  
                 document.getElementById(`eliminar${i}`).addEventListener("click", function(){
 
-                    axios.delete(`/subject${subject._id}`, {
+                    api.delete(`/subject${subject._id}`, {
                      headers: {
                         token: localStorage.getItem('token')
                     }            
@@ -79,7 +79,7 @@ window.onload = function() {
                  
                 document.getElementById(`cambiar${i}`).addEventListener("click", function(){
 
-                    axios.put(`/subject${subject._id}`, {
+                    api.put(`/subject${subject._id}`, {
                     name: document.getElementById(`edit_subject_name${i}`).value
                     },
                     
