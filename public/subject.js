@@ -65,8 +65,8 @@ window.onload = function() {
                     api.delete(`/subject${subject._id}`, {
                      headers: {
                         token: localStorage.getItem('token')
-                    }            
-                    console.log("hola2")
+                    }         ,   
+                   
                    })
                      .then(function (response){
                        window.location.reload()

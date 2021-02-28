@@ -29,7 +29,7 @@ window.onload = function() {
 
         </div>` 
         })
-        
+        reload()
     })
     .catch(function (error) {
         console.error("Error al crear el alumno")
