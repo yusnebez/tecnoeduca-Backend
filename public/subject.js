@@ -36,7 +36,7 @@ function reload (){
 
 window.onload = function() {
     
-    axios.get('api/subject/',{
+    axios.get('api/subject',{
         
         headers: {
             token: localStorage.getItem('token')
@@ -47,6 +47,7 @@ window.onload = function() {
             const parentname=document.getElementById('listado')
             parentname.innerHTML = ``
             response.data.forEach((subject,i) => { 
+                console.log(subject,i);
                 let element = document.createElement('div')
                 element.classList.add('row')
                 element.innerHTML += `
