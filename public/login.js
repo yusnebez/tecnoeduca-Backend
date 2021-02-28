@@ -4,7 +4,7 @@ const api = axios.create({
 })
 
 document.getElementById('login').addEventListener("click", function(){
-    api.post('api/auth/login',{
+    api.post('/auth/login',{
     email: document.getElementById('login_email').value,
     password: document.getElementById('login_password').value
 
