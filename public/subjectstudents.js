@@ -1,6 +1,13 @@
+const api = axios.create({
+    baseURL:"https://tecnoeducate.herokuapp.com/",
+    timeout: 2000
+})
+
 window.onload = function() {
     
-    axios.get('http://localhost:3000/api/student',{
+    
+    
+    axios.get('/api/student',{
         
         headers: {
             token: localStorage.getItem('token')
@@ -34,7 +41,7 @@ window.onload = function() {
 document.getElementById('buscar').addEventListener("click", function() 
 {
 
-    axios.get(`http://localhost:3000/api/student/buscar?email=${document.getElementById('buscar_email').value}`,
+    axios.get(`/api/student/buscar?email=${document.getElementById('buscar_email').value}`,
         
         {
             headers: {
