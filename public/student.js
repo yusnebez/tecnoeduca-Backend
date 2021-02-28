@@ -51,7 +51,7 @@ window.onload = function() {
         </div>` 
 
         })
-        reload ()
+        
     })
     .catch(function (error) {
         console.error("Error al crear el alumno")
@@ -59,6 +59,5 @@ window.onload = function() {
     })
 }
 
-function reload (){
-    window.location.href = "../student.html"
-}
+
+
