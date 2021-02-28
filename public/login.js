@@ -1,10 +1,10 @@
 const api = axios.create({
-    baseURL:"https://tecnoeducate.herokuapp.com/api",
+    baseURL:"https://tecnoeducate.herokuapp.com/",
     timeout: 2000
 })
 
 document.getElementById('login').addEventListener("click", function(){
-    axios.post('/auth/login',{
+    axios.post('api/auth/login',{
     email: document.getElementById('login_email').value,
     password: document.getElementById('login_password').value
 
@@ -16,12 +16,12 @@ document.getElementById('login').addEventListener("click", function(){
         localStorage.setItem('name', response.data.name)
         home()
     }else {
-        alert(" No logeado")
+        alert(" No puede logearse")
     }
     
     })
     .catch(function (error) {
-        alert(" No logeado")
+        alert(" No puede logearse")
 
     })
 }) 
