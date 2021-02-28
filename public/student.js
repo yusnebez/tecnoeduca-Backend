@@ -60,5 +60,5 @@ window.onload = function() {
 }
 
 function reload (){
-    window.location.href = "../subject.html"
+    window.location.href = "../student.html"
 }
