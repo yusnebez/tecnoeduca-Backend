@@ -51,7 +51,7 @@ window.onload = function() {
                 element.classList.add('row')
                 element.innerHTML += `
                 
-                <div class="col-5"><a href="../subjectstudents.html?subjectid=${subject._id}">${subject.name}</a></div>
+                <div class="col-5"><a href="subjectstudents.html?subjectid=${subject._id}">${subject.name}</a></div>
                 <div class="col-2"><button type="submit" class="btn btn-primary btn-lg float-right" id="eliminar${i}">Eliminar</button></div>
                 <div class="col-3">
                 <input placeholder="Nombre" type="text" class="form-control form-control-lg rounded-0" name="edit_subject_name" id="edit_subject_name${i}"/></div>
@@ -68,7 +68,7 @@ window.onload = function() {
                        window.location.reload()
                     })
                     .catch(function (error) {
-                        console.error("Error al crear el alumno")
+                        console.error("Error")
                 
                     })
                 })
