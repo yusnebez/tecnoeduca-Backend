@@ -7,7 +7,7 @@ window.onload = function() {
     
     
     
-    axios.get('/api/student',{
+    axios.get('/api/student/',{
         
         headers: {
             token: localStorage.getItem('token')

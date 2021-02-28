@@ -28,7 +28,7 @@ document.getElementById('Crear_Alumno').addEventListener("click", function(){
 
 window.onload = function() {
     
-    axios.get('/student',{
+    axios.get('api/student',{
         
         headers: {
             token: localStorage.getItem('token')

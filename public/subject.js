@@ -36,7 +36,7 @@ function reload (){
 
 window.onload = function() {
     
-    axios.get('api/subject',{
+    axios.get('api/subject/',{
         
         headers: {
             token: localStorage.getItem('token')
