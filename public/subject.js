@@ -1,11 +1,11 @@
 const api = axios.create({
-    baseURL:"https://tecnoeducate.herokuapp.com/api",
+    baseURL:"https://tecnoeducate.herokuapp.com/",
     timeout: 2000
 })
 
 
 document.getElementById('subject').addEventListener("click", function(){
-    axios.post('/subject', { 
+    axios.post('api/subject', { 
         name: document.getElementById('subject_name').value,
         
     }, 
@@ -29,14 +29,14 @@ document.getElementById('subject').addEventListener("click", function(){
 }) 
   
 function reload (){
-    window.location.href = "subject.html"
+    window.location.href = "../subject.html"
 }
 
 
 
 window.onload = function() {
     
-    axios.get('/subject',{
+    axios.get('api/subject',{
         
         headers: {
             token: localStorage.getItem('token')
@@ -51,7 +51,7 @@ window.onload = function() {
                 element.classList.add('row')
                 element.innerHTML += `
                 
-                <div class="col-5"><a href="subjectstudents.html?subjectid=${subject._id}">${subject.name}</a></div>
+                <div class="col-5"><a href="../subjectstudents.html?subjectid=${subject._id}">${subject.name}</a></div>
                 <div class="col-2"><button type="submit" class="btn btn-primary btn-lg float-right" id="eliminar${i}">Eliminar</button></div>
                 <div class="col-3">
                 <input placeholder="Nombre" type="text" class="form-control form-control-lg rounded-0" name="edit_subject_name" id="edit_subject_name${i}"/></div>
@@ -59,7 +59,7 @@ window.onload = function() {
                 parentname.appendChild(element)  
                 document.getElementById(`eliminar${i}`).addEventListener("click", function(){
 
-                    axios.delete(`/subject/${subject._id}`, {
+                    axios.delete(`api/subject/${subject._id}`, {
                      headers: {
                         token: localStorage.getItem('token')
                     }            
@@ -76,7 +76,7 @@ window.onload = function() {
                  
                 document.getElementById(`cambiar${i}`).addEventListener("click", function(){
 
-                    axios.put(`/subject/${subject._id}`, {
+                    axios.put(`api/subject/${subject._id}`, {
                     name: document.getElementById(`edit_subject_name${i}`).value
                     },
                     
