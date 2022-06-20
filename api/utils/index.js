@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-const teacherModel = require('../models/teacher.model')
+const AdminModel = require('../models/adminmodel')
 
 function authUser (req, res, next) {
     
@@ -9,9 +9,9 @@ function authUser (req, res, next) {
       jwt.verify(req.headers.token, process.env.SECRET, (err, token) => {
         if (err) { res.status(403).json({ error: 'Token not valid' }) }
   
-        teacherModel.findOne({ email: token.email })
-          .then(teacher => {
-            res.locals.teacher = teacher
+        AdminModel.findOne({ email: token.email })
+          .then(admin => {
+            res.locals.admin = admin
             next()
           })
           .catch(err => res.json(err))

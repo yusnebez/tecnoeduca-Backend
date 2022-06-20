@@ -1,13 +1,11 @@
-const router = require ('express').Router()
-const teacherRouter = require('../router/teacher.router')
-const studentRouter = require('../router/student.router')
-const subjectRouter = require('../router/subject.router')
-const authRouter = require('./auth.router')
-const { authUser } = require('../utils')
+const router = require('express').Router()
+const adminRouter = require('./adminrouter')
+const postRouter = require('./postrouter')
+const authRouter = require('./authrouter')
 
-router.use('/teacher', teacherRouter)
-router.use('/student', studentRouter)
-router.use('/subject', subjectRouter)  
-router.use('/auth', authRouter)
+
+router.use('/admin', adminRouter)
+router.use('/villa', postRouter)  
+router.use('/', authRouter)
 
 module.exports = router;

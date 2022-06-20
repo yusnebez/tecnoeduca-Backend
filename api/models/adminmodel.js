@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const teacherSchema = new mongoose.Schema({
+const adminSchema = new mongoose.Schema({
 
     name:{ 
         type: String,
@@ -16,17 +16,17 @@ const teacherSchema = new mongoose.Schema({
         unique: [true, 'Este email esta registrado.']
 
     },
-    subjects:[{
+    post:[{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "subject"
+        ref: "post"
     }]
     // date:{},
     // notification:{},
     
 });
 
-const teachermodel = mongoose.model('teacher', teacherSchema)
-module.exports = teachermodel;
+const AdminModel = mongoose.model('Admin', adminSchema)
+module.exports = AdminModel;
 
 
 

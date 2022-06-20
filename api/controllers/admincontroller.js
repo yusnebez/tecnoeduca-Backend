@@ -1,31 +1,33 @@
-const teacherModel = require("../models/teacher.model")
+const AdminModel = require("../models/adminmodel")
 const { handleError } = require("../utils")
 
-function getAllTeachers(req, res){
-    teacherModel
+
+const getAllAdmin = (req, res) => {
+    AdminModel
     .find()
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
-}
+} 
 
-function getTeacherById(req, res){
-    teacherModel
+
+const getAdminById = (req, res) => {
+    AdminModel
     .findById(req.params.id)
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 
 }
 
-function updateTeacher(req, res){
-    teacherModel
+const updateAdmin = (req, res) => {
+    AdminModel
     .findByIdAndUpdate(req.params.id)
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
 
 }
 
-function deleteTeacherById(req, res){
-    teacherModel
+const deleteAdminById = (req, res) => {
+    AdminModel
     .findByIdAndRemove(req.params.id)
     .then(response => res.json(response))
     .catch((err) => handleError(err, res))
@@ -34,9 +36,9 @@ function deleteTeacherById(req, res){
 
 module.exports = {
 
-    getAllTeachers,
-    getTeacherById,
-    updateTeacher,
-    deleteTeacherById,
+    getAdminById,
+    updateAdmin,
+    deleteAdminById,
+    getAllAdmin
 
 }
